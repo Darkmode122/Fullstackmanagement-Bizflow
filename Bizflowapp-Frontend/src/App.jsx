@@ -6,7 +6,8 @@ function App() {
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li id="navbarabout"><a href="#about">About Us</a></li>
+        <li className="navbarleft"><a href="#about">About Us</a></li>
+        <li><a href="#signin">Sign In</a></li>
       </ul>
       
     </div>

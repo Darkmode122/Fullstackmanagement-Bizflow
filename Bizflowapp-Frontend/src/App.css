@@ -2,6 +2,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #20373b;
 }
 
 h2, p {
@@ -34,9 +35,8 @@ ul li a {
 ul li a:hover {
   background-color: #111111;
 }
-
-#navbarabout {
-  margin-left: 750px;
+.navbarleft {
+  margin-left: 700px;
 }
 
 .logo {
@@ -46,3 +46,4 @@ ul li a:hover {
     height:60px;
     
 }
+
