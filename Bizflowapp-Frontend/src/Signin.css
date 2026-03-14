@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #20373b;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column; /* Stacks items vertically */
+  align-items: center;    /* Centers items horizontally */
+  gap: 15px;             /* Adds space between inputs */
+  padding: 40px;
+  
+  /* Glass Box Effect */
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Simplified input styles to keep them neat */
+.email-input, .password-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 250px;
+}
+
+.submitbutton {
+  background-color: #4CAF50;
+  justify-content: center;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  ;
+}
+
+.submitbutton:hover {
+  background-color: #45a049;
+}
+
+.email{
+   display:flex;
+   justify-content: center;
+   
+}
+
+.password{
+  display:flex;
+  justify-content: center;
+  
+}

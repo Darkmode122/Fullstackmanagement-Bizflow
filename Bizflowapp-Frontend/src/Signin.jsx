@@ -12,23 +12,25 @@ function Signin() {
   };
 
   return (
+    <div className='form-container'>
      <form onSubmit={handleSubmit}>
-      <label>Email:
+      <label className='email'>Email:
         <input
           type="text" 
           value={name}
           onChange={handleChange}
         />
-      </label>
-      <label>Password:
+      </label >
+      <label className='password'>Password:
         <input
           type="password" 
           value={name}
           onChange={handleChange}
         />
       </label>
-      <input type="submit" />
+      <input className="submitbutton" type="submit" />
     </form>
-  )
+    </div>
+  ) 
 }
 export default Signin;
