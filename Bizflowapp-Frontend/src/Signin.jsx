@@ -8,7 +8,6 @@ function Signin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(name);
   };
 
   return (
