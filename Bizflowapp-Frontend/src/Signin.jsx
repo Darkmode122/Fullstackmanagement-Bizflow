@@ -1,14 +1,21 @@
 import { useState } from 'react';
 function Signin() {
-  const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleChange = (e) => {
-    setName(e.target.value);
+    setUsername(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+  const handleChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const handleSubmitPassword = (e) => {
+    e.preventDefault();
+  }
 
   return (
     <div className='form-container'>
@@ -16,15 +23,15 @@ function Signin() {
       <label className='email'>Email:
         <input
           type="text" 
-          value={name}
+          value={username}
           onChange={handleChange}
         />
       </label >
       <label className='password'>Password:
         <input
           type="password" 
-          value={name}
-          onChange={handleChange}
+          value={password}
+          onChange={handleChangePassword}
         />
       </label>
       <input className="submitbutton" type="submit" />

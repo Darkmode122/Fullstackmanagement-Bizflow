@@ -9,6 +9,13 @@ const cors = require('cors');
 app.use(cors());
 const port = 3000;
 
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'root',
+  database: 'bizflowapp'
+});
+
 // Defines a route for the root URL (/). When a client makes a GET request to the root URL,
 // the server responds with the message "Hello World!"
 app.get('/', (req, res) => {
