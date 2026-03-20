@@ -1,26 +1,40 @@
 import { useState } from 'react';
+import axious from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+
 function Signin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Initialize the hook
+
 
   const handleChange = (e) => {
     setUsername(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-  const handleChangePassword = (e) => {
+ const handleChangePassword = (e) => {
     setPassword(e.target.value);
   };
-  const handleSubmitPassword = (e) => {
-    e.preventDefault();
-  }
 
-  return (
+const handleSubmit = (e) => {
+  e.preventDefault();
+  axious.post('http://localhost:8081/login', { username, password })
+
+    .then(res => {
+      console.log(res);
+      navigate('/about');
+    })
+    .catch(err => {
+      console.error("Login Error:", err);
+      alert("Authentication failed. Please check your credentials.");
+    });
+};
+
+return (
     <div className='form-container'>
      <form onSubmit={handleSubmit}>
-      <label className='email'>Email:
+      <label className='username'>Username:
         <input
           type="text" 
           value={username}
@@ -34,7 +48,9 @@ function Signin() {
           onChange={handleChangePassword}
         />
       </label>
-      <input className="submitbutton" type="submit" />
+      <button className="submitbutton" type="submit">
+        Sign In
+      </button>
     </form>
     </div>
   ) 

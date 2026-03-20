@@ -22,7 +22,7 @@ body {
 }
 
 /* Simplified input styles to keep them neat */
-.email-input, .password-input {
+.username-input, .password-input {
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -48,7 +48,7 @@ body {
   background-color: #45a049;
 }
 
-.email{
+.username{
    display:flex;
    justify-content: center;
    margin-right: 50px;
