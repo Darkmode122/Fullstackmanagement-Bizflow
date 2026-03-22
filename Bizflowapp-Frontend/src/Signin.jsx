@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function Signin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  const navigate = useNavigate();
 
 
   const handleChange = (e) => {
@@ -20,7 +20,16 @@ function Signin() {
  const handleSubmit = (e) => {
   e.preventDefault();
   axious.post('http://localhost:8081/login', { username, password })
-  .then(res => console.log(res.data))
+  .then(res => {
+    if(res.data === "Login successful"){
+      navigate('/about');
+    } else {
+      console.log("Invalid username or password");
+      return;
+    }
+    
+  
+  })
   .catch(err => console.log(err));
 }
 return (
