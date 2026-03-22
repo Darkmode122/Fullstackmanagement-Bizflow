@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function Signin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // Initialize the hook
+
 
 
   const handleChange = (e) => {
@@ -17,20 +17,12 @@ function Signin() {
     setPassword(e.target.value);
   };
 
-const handleSubmit = (e) => {
+ const handleSubmit = (e) => {
   e.preventDefault();
   axious.post('http://localhost:8081/login', { username, password })
-
-    .then(res => {
-      console.log(res);
-      navigate('/about');
-    })
-    .catch(err => {
-      console.error("Login Error:", err);
-      alert("Authentication failed. Please check your credentials.");
-    });
-};
-
+  .then(res => console.log(res.data))
+  .catch(err => console.log(err));
+}
 return (
     <div className='form-container'>
      <form onSubmit={handleSubmit}>
