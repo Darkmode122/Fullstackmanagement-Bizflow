@@ -7,7 +7,7 @@ function Signin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     setUsername(e.target.value);
@@ -16,19 +16,18 @@ function Signin() {
  const handleChangePassword = (e) => {
     setPassword(e.target.value);
   };
+  
 
- const handleSubmit = (e) => {
+const handleSubmit = (e) => {
   e.preventDefault();
   axious.post('http://localhost:8081/login', { username, password })
   .then(res => {
     if(res.data === "Login successful"){
       navigate('/about');
     } else {
-      console.log("Invalid username or password");
+      setErrorMessage('Invalid username or password');
       return;
     }
-    
-  
   })
   .catch(err => console.log(err));
 }
@@ -52,6 +51,7 @@ return (
       <button className="submitbutton" type="submit">
         Sign In
       </button>
+      <div><p className="error">{errorMessage}</p></div>
     </form>
     </div>
   ) 
