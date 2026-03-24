@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axious from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import './Signin.css';
 
 function Signin() {
   const [username, setUsername] = useState('');
@@ -23,7 +23,7 @@ const handleSubmit = (e) => {
   axious.post('http://localhost:8081/login', { username, password })
   .then(res => {
     if(res.data === "Login successful"){
-      navigate('/about');
+      navigate('/welcome');
     } else {
       setErrorMessage('Invalid username or password');
       return;
@@ -56,4 +56,5 @@ return (
     </div>
   ) 
 }
+
 export default Signin;

@@ -1,3 +1,8 @@
+.welcome-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
 
 body {
   margin: 0;
@@ -35,8 +40,8 @@ ul li a {
 ul li a:hover {
   background-color: #111111;
 }
-.navbar-left {
-  margin-left: 700px;
+.navbarleft {
+  margin-left: 1060px;
 }
 
   .linklogo{

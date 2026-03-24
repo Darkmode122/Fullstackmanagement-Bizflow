@@ -1,21 +1,30 @@
 import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route,Outlet} from 'react-router-dom';
 import App from "./App.jsx";
-import './App.css';
-import './Signin.css';
 import About from "./About.jsx";
 import Signin from "./Signin.jsx";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Welcome from "./welcome.jsx";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+function LayoutWithNavbar() {
+  return (
+    <>
+      <App />
+      <Outlet />
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(  
   <BrowserRouter>
-    <App />
     <Routes>
-        
+      <Route element={<LayoutWithNavbar />}>
+        <Route path="/" element={<h1>Home</h1>} />
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<Signin />} />
-        
+      </Route>
+
+      <Route path="/welcome" element={<Welcome />} />
+
     </Routes>
   </BrowserRouter>
-
- 
+   
 );
