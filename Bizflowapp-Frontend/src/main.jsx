@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import About from "./About.jsx";
 import Signin from "./Signin.jsx";
 import Welcome from "./welcome.jsx";
+import Home from "./Home.jsx";
 
 function LayoutWithNavbar() {
   return (
@@ -17,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Routes>
       <Route element={<LayoutWithNavbar />}>
-        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<Signin />} />
       </Route>

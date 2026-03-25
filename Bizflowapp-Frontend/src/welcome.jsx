@@ -12,7 +12,7 @@ function Welcome() {
             </Link>
           </li>
         <li className="navbarleft">
-          <Link to="/signout">Sign Out</Link>
+          <Link to="/">Sign Out</Link>
         </li>
         
         </ul>
