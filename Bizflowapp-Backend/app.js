@@ -14,6 +14,16 @@ const db = mysql.createConnection({
 
 
 
+app.get('/users', (req, res) => {
+  const sql = 'SELECT * FROM users';
+  db.query(sql, (err, data) => {
+    if (err) {return res.json("Error");}
+    return res.json(data);
+
+  });
+});
+
+
 
 app.post('/login', (req, res) => {
   const sql = 'SELECT * FROM users WHERE username = ? AND password = ?';
