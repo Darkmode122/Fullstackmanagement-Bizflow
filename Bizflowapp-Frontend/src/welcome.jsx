@@ -42,7 +42,7 @@ function Welcome() {
               <img src="/logo.png" alt="Logo"/>
             </Link>
           </li>
-          <li><Link to="/Task">Task Management</Link></li>
+          <li className='darknavbar'><Link to="/Task">Task Management</Link></li>
           <li className='navbarleft'>
             <Link to="/" onClick={handleLogout}>
               Sign Out

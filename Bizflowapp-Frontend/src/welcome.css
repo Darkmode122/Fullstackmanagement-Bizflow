@@ -37,7 +37,6 @@ ul li a {
   padding: 14px 16px;
   font-size: 20px;
   text-decoration: none;
-  background-color: #183439;
 }
 
 ul li a:hover {
@@ -45,15 +44,19 @@ ul li a:hover {
 }
 .navbarleft {
   margin-left: 899px;
+  background-color: #183439;
 }
 
-  .linklogo{
-    display: flex;
-    justify-content: last baseline;
-    width:70px;
-    height:70px;
-    object-fit: contain;
-    padding-left: 0px;
-    padding-top:0px;
+.linklogo{
+  display: flex;
+  justify-content: last baseline;
+  width:70px;
+  height:70px;
+  object-fit: contain;
+  padding-left: 0px;
+  padding-top:0px;
 }
 
+.darknavbar {
+  background-color: #183439;
+}
