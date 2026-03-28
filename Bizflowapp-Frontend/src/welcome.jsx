@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import axios from 'axios'; // Make sure to import axios
+import axios from 'axios'; // import axios
 import './welcome.css';
 
 function Welcome() {
@@ -9,7 +9,7 @@ function Welcome() {
 
   useEffect(() => {
 
-    axios.post('http://localhost:8081/check-session',)
+    axios.post('http://localhost:8081/check-session', {}, { withCredentials: true })
     .then(res => {
 
       if (res.data.valid) {

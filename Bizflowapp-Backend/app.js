@@ -4,7 +4,12 @@ app.use(express.json());
 const cors = require('cors');
 const mysql = require('mysql2');  
 const session = require('express-session');
-app.use(cors());
+
+app.use(cors({
+    origin: ["http://localhost:5173"], 
+    methods: ["POST", "GET"],
+    credentials: true
+}));
 
 app.use(session({
   secret: 'your_secret_key', // Change this to a strong secret in production
@@ -28,7 +33,10 @@ app.post('/login', (req, res) => {
     if (err) {return res.json("Error");}
     if (data.length > 0) {
       req.session.user = { username: data[0].username }; // Store user data in session
-      return res.json("Login successful");
+      return req.session.save((err) => {
+        if (err) return res.json("Error");
+        return res.json("Login successful");
+      });
     } else {
       return res.json("Invalid username or password");
     }

@@ -20,7 +20,7 @@ function Signin() {
 
  const handleSubmit = (e) => {
   e.preventDefault();
-  axious.post('http://localhost:8081/login', { username, password })
+  axious.post('http://localhost:8081/login', { username, password }, { withCredentials: true })
   .then(res => {
     if(res.data === "Login successful"){
       navigate('/welcome');
