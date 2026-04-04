@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios'; // import axios
 import './welcome.css';
@@ -33,16 +33,17 @@ function Welcome() {
       .catch(err => console.log(err));
   };
     return (
+    <>
         <div>
         <nav>
       <div>
         <ul>
           <li>
-            <Link className='linklogo' to="/home">
+            <Link className='linklogo' to="/welcome">
               <img src="/logo.png" alt="Logo"/>
             </Link>
           </li>
-          <li className='darknavbar'><Link to="/Task">Task Management</Link></li>
+          <li className='darknavbar'><Link to="/task">Task Management</Link></li>
           <li className='navbarleft'>
             <Link to="/" onClick={handleLogout}>
               Sign Out
@@ -57,6 +58,8 @@ function Welcome() {
 
         </div>
     </div>
+    <Outlet />
+    </>
   );
 }
 export default Welcome;
